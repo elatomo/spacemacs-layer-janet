@@ -18,7 +18,8 @@ programming language.
 
 ## Installation
 
-Clone this repository into your local layers directory or into your `.emacs.d/private` directory:
+Clone this repository into your local layers directory or into your
+`.emacs.d/private` directory:
 
 ```bash
 git clone https://github.com/elatomo/spacemacs-layer-janet.git ~/.emacs.d/private/janet
