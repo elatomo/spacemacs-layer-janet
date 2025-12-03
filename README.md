@@ -3,6 +3,10 @@
 A Spacemacs layer providing support for the [Janet](https://janet-lang.org/)
 programming language.
 
+> [!WARNING]
+> This layer is a work in progress (WIP). Some features may change, be
+> incomplete, or unstable. Use with caution 🧪
+
 ## Features
 
 - Syntax highlighting, indentation, and navigation via
