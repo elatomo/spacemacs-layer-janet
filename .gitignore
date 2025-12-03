@@ -1,0 +1,14 @@
+# Emacs backup and autosave files
+*~
+\#*\#
+.\#*
+
+# Byte-compiled files
+*.elc
+
+# Project-specific caches
+\.cache/
+\.DS_Store
+
+# Spacemacs auto-generated files (if any)
+*.elc
