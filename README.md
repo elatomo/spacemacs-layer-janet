@@ -11,6 +11,11 @@ programming language.
 - On-the-fly linting using
   [flycheck-janet](https://github.com/sogaiu/flycheck-janet)
 
+## Dependencies
+
+- Emacs 29.1 or newer (for built-in tree-sitter support)
+- Janet installed and available on your PATH
+
 ## Installation
 
 Clone this repository into your local layers directory or into your `.emacs.d/private` directory:
