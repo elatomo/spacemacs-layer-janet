@@ -21,16 +21,16 @@ programming language.
 
 janet-lsp is under active development. Current capabilities:
 
-| Feature                | Status                          |
-|------------------------|---------------------------------|
-| Auto-completion        | ⚠️ Works but slow, may block UI  |
-| Buffer formatting      | ✅ Works                        |
-| Jump to definition     | ✅ Works (project symbols)      |
-| Inline compiler errors | ✅ Works                        |
-| On-hover documentation | ⚠️ May timeout                   |
-| Signature help         | ❌ Not working (upstream bug)   |
-| Find references        | ❌ Not yet implemented          |
-| Organize imports       | ❌ Not supported                |
+| Feature                | Status                     |
+|------------------------|----------------------------|
+| Auto-completion        | ✅ Works                   |
+| Buffer formatting      | ✅ Works                   |
+| Jump to definition     | ✅ Works (project symbols) |
+| Inline compiler errors | ✅ Works                   |
+| Signature help         | ✅ Works                   |
+| On-hover documentation | ✅ Works                   |
+| Find references        | ❌ Not yet implemented     |
+| Organize imports       | ❌ Not supported           |
 
 See [janet-lsp](https://github.com/CFiggers/janet-lsp) for latest status.
 
