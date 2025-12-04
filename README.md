@@ -12,18 +12,37 @@ programming language.
 - Syntax highlighting, indentation, and navigation via
   [janet-ts-mode](https://github.com/sogaiu/janet-ts-mode) (tree-sitter based)
 - Interactive REPL integration with [ajrepl](https://github.com/sogaiu/ajrepl)
+- Language Server Protocol support via
+  [janet-lsp](https://github.com/CFiggers/janet-lsp)
 - On-the-fly linting using
   [flycheck-janet](https://github.com/sogaiu/flycheck-janet)
+
+### LSP Feature Status
+
+janet-lsp is under active development. Current capabilities:
+
+| Feature                | Status                          |
+|------------------------|---------------------------------|
+| Auto-completion        | ⚠️ Works but slow, may block UI  |
+| Buffer formatting      | ✅ Works                        |
+| Jump to definition     | ✅ Works (project symbols)      |
+| Inline compiler errors | ✅ Works                        |
+| On-hover documentation | ⚠️ May timeout                   |
+| Signature help         | ❌ Not working (upstream bug)   |
+| Find references        | ❌ Not yet implemented          |
+| Organize imports       | ❌ Not supported                |
+
+See [janet-lsp](https://github.com/CFiggers/janet-lsp) for latest status.
 
 ## Dependencies
 
 - Emacs 29.1 or newer (for built-in tree-sitter support)
-- Janet installed and available on your PATH
+- [Janet](https://janet-lang.org/) installed and available on your PATH
+- [janet-lsp](https://github.com/CFiggers/janet-lsp) installed (`jpm install`)
 
 ## Installation
 
-Clone this repository into your local layers directory or into your
-`.emacs.d/private` directory:
+Clone this repository into your Spacemacs private layers directory:
 
 ```bash
 git clone https://github.com/elatomo/spacemacs-layer-janet.git ~/.emacs.d/private/janet

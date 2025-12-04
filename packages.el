@@ -7,7 +7,8 @@
 
 ;; This layer adds support for the Janet programming language. It includes
 ;; syntax highlighting and indentation via janet-ts-mode, REPL interaction
-;; through ajrepl, and flycheck linting support using flycheck-janet.
+;; through ajrepl, LSP support via janet-lsp, and flycheck linting support using
+;; flycheck-janet.
 
 ;;; Code:
 
@@ -35,10 +36,22 @@
                                :fetcher github
                                :repo "sogaiu/flycheck-janet"
                                :files ("*.el"))
-                    :requires flycheck)))
+                    :requires flycheck)
+    lsp-mode))
+
+(defun janet/pre-init-lsp-mode ()
+  "Register janet-lsp with lsp-mode."
+  (spacemacs|use-package-add-hook lsp-mode
+    :post-config
+    (add-to-list 'lsp-language-id-configuration '(janet-ts-mode . "janet"))
+    (lsp-register-client
+     (make-lsp-client
+      :new-connection (lsp-stdio-connection '("janet-lsp"))
+      :major-modes '(janet-ts-mode)
+      :server-id 'janet-lsp))))
 
 (defun janet/init-janet-ts-mode ()
-  "Initialize janet-ts-mode with keybindings and flycheck support."
+  "Initialize janet-ts-mode."
   (use-package janet-ts-mode
     :defer t
     :mode "\\.janet\\'"
@@ -52,7 +65,8 @@
       "se" 'ajrepl-send-expression-at-point
       "sr" 'ajrepl-send-region)
     :config
-    (spacemacs/enable-flycheck 'janet-ts-mode)))
+    (spacemacs/enable-flycheck 'janet-ts-mode)
+    (add-hook 'janet-ts-mode-local-vars-hook #'spacemacs//janet-setup-backend)))
 
 (defun janet/init-ajrepl ()
   "Initialize ajrepl and enable interaction mode for Janet buffers."
