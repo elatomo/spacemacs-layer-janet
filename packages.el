@@ -11,6 +11,17 @@
 
 ;;; Code:
 
+;; Verify Emacs version and treesit support
+(unless (and (fboundp 'treesit-available-p)
+             (treesit-available-p))
+  (error "Janet layer requires Emacs 29+ with built-in tree-sitter support"))
+
+;; Install tree-sitter grammar for Janet
+(unless (treesit-language-available-p 'janet-simple)
+  (add-to-list 'treesit-language-source-alist
+               '(janet-simple . ("https://github.com/sogaiu/tree-sitter-janet-simple")))
+  (treesit-install-language-grammar 'janet-simple))
+
 (defconst janet-packages
   '((janet-ts-mode :location (recipe
                               :fetcher github
@@ -25,15 +36,6 @@
                                :repo "sogaiu/flycheck-janet"
                                :files ("*.el"))
                     :requires flycheck)))
-
-(defun janet/pre-init-tree-sitter ()
-  "Configure tree-sitter grammar for Janet before tree-sitter layer loads."
-  (spacemacs|use-package-add-hook tree-sitter
-    :post-config
-    (add-to-list 'treesit-language-source-alist
-                 '(janet-simple . ("https://github.com/sogaiu/tree-sitter-janet-simple")))
-    (unless (treesit-language-available-p 'janet-simple)
-      (treesit-install-language-grammar 'janet-simple))))
 
 (defun janet/init-janet-ts-mode ()
   "Initialize janet-ts-mode with keybindings and flycheck support."
