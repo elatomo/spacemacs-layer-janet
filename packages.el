@@ -74,15 +74,15 @@
     :config
     (add-hook 'janet-ts-mode-hook #'ajrepl-interaction-mode)))
 
-(defun janet/post-init-flycheck ()
-  "Enable flycheck for janet-ts-mode."
-  (spacemacs/enable-flycheck 'janet-ts-mode))
-
 (defun janet/init-flycheck-janet ()
   "Initialize flycheck-janet checker."
   (use-package flycheck-janet
     :after (flycheck janet-ts-mode)
     :config
     (flycheck-add-mode 'janet-janet 'janet-ts-mode)))
+
+(defun janet/post-init-flycheck ()
+  "Enable flycheck for janet-ts-mode."
+  (spacemacs/enable-flycheck 'janet-ts-mode))
 
 ;;; packages.el ends here
