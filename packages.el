@@ -8,7 +8,7 @@
 
 ;;; Code:
 
-;; Verify Emacs version and treesit support
+;; Verify Emacs version and treesit support at load time
 (unless (and (fboundp 'treesit-available-p)
              (treesit-available-p))
   (error "Janet layer requires Emacs 29+ with built-in tree-sitter support"))
@@ -65,7 +65,7 @@
     (add-hook 'janet-ts-mode-local-vars-hook #'spacemacs//janet-setup-backend)))
 
 (defun janet/init-ajrepl ()
-  "Initialize ajrepl and enable interaction mode for Janet buffers."
+  "Initialize ajrepl for Janet REPL interaction."
   (use-package ajrepl
     :defer t
     :commands (ajrepl ajrepl-send-buffer ajrepl-send-region)
@@ -79,7 +79,7 @@
   (spacemacs/enable-flycheck 'janet-ts-mode))
 
 (defun janet/init-flycheck-janet ()
-  "Initialize flycheck-janet checker for Janet syntax validation."
+  "Initialize flycheck-janet checker."
   (use-package flycheck-janet
     :after (flycheck janet-ts-mode)
     :config
