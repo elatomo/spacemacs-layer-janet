@@ -18,4 +18,10 @@
         (lsp-deferred))
     (message "Janet: LSP layer not found")))
 
+(defun spacemacs//janet-configure-ajrepl ()
+  "Configure ajrepl for better Spacemacs integration."
+  ;; Disable problematic colors
+  (when janet-repl-disable-colors
+    (setq ajrepl-start-cmd-line '("janet" "-s" "-n"))))
+
 ;;; funcs.el ends here

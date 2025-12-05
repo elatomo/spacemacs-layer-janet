@@ -5,4 +5,9 @@
 
 (spacemacs|define-jump-handlers janet-ts-mode)
 
+(defcustom janet-repl-disable-colors t
+  "Disable ANSI colors in Janet REPL."
+  :type 'boolean
+  :group 'janet)
+
 ;;; config.el ends here

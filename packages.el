@@ -75,6 +75,7 @@
     :commands (ajrepl ajrepl-send-buffer ajrepl-send-region
                       ajrepl-send-expression-at-point ajrepl-switch-to-repl)
     :init
+    (spacemacs//janet-configure-ajrepl)
     (spacemacs/register-repl 'ajrepl 'ajrepl "janet")
     :config
     (add-hook 'janet-ts-mode-hook #'ajrepl-interaction-mode)))
