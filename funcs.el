@@ -13,6 +13,6 @@
         (setq-local lsp-completion-show-detail nil)
         (setq-local lsp-completion-show-kind nil)
         (lsp-deferred))
-    (message "LSP layer not found. Add 'lsp' to dotspacemacs-configuration-layers.")))
+    (message "Janet: LSP layer not found")))
 
 ;;; funcs.el ends here
