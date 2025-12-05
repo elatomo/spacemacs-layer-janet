@@ -61,7 +61,6 @@
       "se" 'ajrepl-send-expression-at-point
       "sr" 'ajrepl-send-region)
     :config
-    (spacemacs/enable-flycheck 'janet-ts-mode)
     (add-hook 'janet-ts-mode-local-vars-hook #'spacemacs//janet-setup-backend)))
 
 (defun janet/init-ajrepl ()
