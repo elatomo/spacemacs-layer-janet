@@ -4,11 +4,7 @@
 ;; URL: https://github.com/elatomo/spacemacs-layer-janet
 
 ;;; Commentary:
-
-;; This layer adds support for the Janet programming language. It includes
-;; syntax highlighting and indentation via janet-ts-mode, REPL interaction
-;; through ajrepl, LSP support via janet-lsp, and flycheck linting support using
-;; flycheck-janet.
+;; Janet programming language support with tree-sitter, REPL, LSP, and linting.
 
 ;;; Code:
 
