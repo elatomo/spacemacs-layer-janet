@@ -12,6 +12,9 @@
         ;; FIXME: janet-lsp's resolveProvider blocks UI; disable detail fetching
         (setq-local lsp-completion-show-detail nil)
         (setq-local lsp-completion-show-kind nil)
+        ;; FIXME: janet-lsp doesn't clear stale diagnostics on fix.
+        ;; Test again after upstream fix, then remove flycheck-janet.
+        (setq-local lsp-diagnostics-provider :none)
         (lsp-deferred))
     (message "Janet: LSP layer not found")))
 
