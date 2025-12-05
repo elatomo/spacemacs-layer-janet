@@ -33,6 +33,7 @@
                                :repo "sogaiu/flycheck-janet"
                                :files ("*.el"))
                     :requires flycheck)
+    flycheck
     lsp-mode))
 
 (defun janet/pre-init-lsp-mode ()
