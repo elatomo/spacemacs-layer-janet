@@ -67,7 +67,8 @@
   "Initialize ajrepl for Janet REPL interaction."
   (use-package ajrepl
     :defer t
-    :commands (ajrepl ajrepl-send-buffer ajrepl-send-region)
+    :commands (ajrepl ajrepl-send-buffer ajrepl-send-region
+                      ajrepl-send-expression-at-point ajrepl-switch-to-repl)
     :init
     (spacemacs/register-repl 'ajrepl 'ajrepl "janet")
     :config
