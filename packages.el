@@ -33,6 +33,10 @@
                                :repo "sogaiu/flycheck-janet"
                                :files ("*.el"))
                     :requires flycheck)
+    (ob-janet :location (recipe
+                         :fetcher github
+                         :repo "DEADB17/ob-janet"
+                         :files ("ob-janet.el")))
     flycheck
     lsp-mode))
 
@@ -81,6 +85,17 @@
     :after (flycheck janet-ts-mode)
     :config
     (flycheck-add-mode 'janet-janet 'janet-ts-mode)))
+
+(defun janet/init-ob-janet ()
+  "Initialize ob-janet for org-babel support."
+  (use-package ob-janet
+    :defer t
+    :after org
+    :commands (org-babel-execute:janet)
+    :config
+    (add-to-list 'org-babel-load-languages '(janet . t))
+    (org-babel-do-load-languages 'org-babel-load-languages
+                                 org-babel-load-languages)))
 
 (defun janet/post-init-flycheck ()
   "Enable flycheck for janet-ts-mode."

@@ -12,6 +12,7 @@ programming language.
   [janet-lsp](https://github.com/CFiggers/janet-lsp)
 - On-the-fly linting using
   [flycheck-janet](https://github.com/sogaiu/flycheck-janet)
+- Org-babel integration via [ob-janet](https://github.com/DEADB17/ob-janet)
 
 ### LSP Feature Status
 
